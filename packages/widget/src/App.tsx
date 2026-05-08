@@ -1,4 +1,3 @@
-import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import WidgetDemo from './pages/WidgetDemo'
 import Dashboard from './pages/Dashboard'

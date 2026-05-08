@@ -1,5 +1,3 @@
-import React from 'react'
-
 const JC_AVATAR = (
   <div style={{
     width: '32px',

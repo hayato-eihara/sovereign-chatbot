@@ -1,5 +1,3 @@
-import React from 'react'
-
 interface ChatMessageProps {
   role: 'user' | 'assistant'
   content: string

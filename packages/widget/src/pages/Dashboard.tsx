@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import StatsBar from '../components/dashboard/StatsBar'
 import ConversationList from '../components/dashboard/ConversationList'

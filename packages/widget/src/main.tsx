@@ -1,4 +1,3 @@
-import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { ChatWidget } from './components/ChatWidget'
 import styles from './styles/widget.css?inline'
