@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/* ── Panel animations ─────────────────────────────────── */
+@keyframes sovereign-slide-up {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+
+@keyframes sovereign-slide-down {
+  from { opacity: 1; transform: translateY(0)    scale(1);    }
+  to   { opacity: 0; transform: translateY(20px) scale(0.97); }
+}
+
+/* ── Button animation ─────────────────────────────────── */
+@keyframes sovereign-btn-pop {
+  0%   { opacity: 0; transform: scale(0.3); }
+  70%  { transform: scale(1.08); }
+  100% { opacity: 1; transform: scale(1);   }
+}
+
+/* ── Typing dots ──────────────────────────────────────── */
+@keyframes sovereign-bounce-dot {
+  0%, 60%, 100% { transform: translateY(0);    }
+  30%           { transform: translateY(-5px); }
+}
+
+/* ── Applied classes ──────────────────────────────────── */
+.sovereign-panel-enter {
+  animation: sovereign-slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.sovereign-panel-exit {
+  animation: sovereign-slide-down 0.28s cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+.sovereign-btn-pop {
+  animation: sovereign-btn-pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.sovereign-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #bbb;
+  animation: sovereign-bounce-dot 1.4s ease-in-out infinite;
+}
+.sovereign-dot:nth-child(1) { animation-delay: 0s;   }
+.sovereign-dot:nth-child(2) { animation-delay: 0.2s; }
+.sovereign-dot:nth-child(3) { animation-delay: 0.4s; }
+
+/* ── Scrollbar ────────────────────────────────────────── */
+.sovereign-messages::-webkit-scrollbar       { width: 4px; }
+.sovereign-messages::-webkit-scrollbar-track { background: transparent; }
+.sovereign-messages::-webkit-scrollbar-thumb { background: #e8e8e8; border-radius: 2px; }
+
+/* ── Input ────────────────────────────────────────────── */
+.sovereign-input::placeholder { color: #bbb; }
+.sovereign-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.15);
+}
+
+/* ── Buttons ──────────────────────────────────────────── */
+.sovereign-send-btn:not(:disabled):hover  { background: #6b0000 !important; }
+.sovereign-send-btn:not(:disabled):active { transform: scale(0.92); }
+
+.sovereign-toggle-btn { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important; }
+.sovereign-toggle-btn:hover { transform: scale(1.09) !important; }
+
+.sovereign-close-btn { transition: opacity 0.3s !important; }
+.sovereign-close-btn:hover { opacity: 0.45 !important; }
+
+/* ── Message links ────────────────────────────────────── */
+.sovereign-msg-link {
+  color: #8b0000;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s;
+}
+.sovereign-msg-link:hover { color: #6b0000; }
+
+/* ── Mobile: full-screen panel ────────────────────────── */
+@media (max-width: 639px) {
+  .sovereign-panel {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100dvh !important;
+    border-radius: 0 !important;
+  }
+  .sovereign-input-area {
+    padding-bottom: calc(0.875rem + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}

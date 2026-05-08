@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar for dashboard */
+.sovereign-scroll::-webkit-scrollbar       { width: 5px; }
+.sovereign-scroll::-webkit-scrollbar-track { background: transparent; }
+.sovereign-scroll::-webkit-scrollbar-thumb { background: #374151; border-radius: 3px; }
+.sovereign-scroll::-webkit-scrollbar-thumb:hover { background: #4b5563; }
